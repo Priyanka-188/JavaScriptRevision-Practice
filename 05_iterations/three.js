@@ -60,3 +60,4 @@ for (const [key,value] of myobj) {
 }
 
 //so object is not iterable  using 'for of' loop, their are another way to iterate objects
+// 'for of' loop works on arrays and map but not on object
