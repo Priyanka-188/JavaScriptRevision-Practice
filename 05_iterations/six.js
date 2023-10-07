@@ -59,7 +59,7 @@ const books = [
 userbooks = books.filter( (bk)=>{
     return bk.publish>=1995 && bk.genre ==="History";  
 })
-console.log(userbooks); //  [
+// console.log(userbooks); //  [
                         //     {
                         //     title: 'Book Three',
                         //     genre: 'History',
@@ -67,3 +67,16 @@ console.log(userbooks); //  [
                         //     edition: 2007
                         //     }
                         //  ]
+            
+userbooks = books.filter( (bk)=>{
+    return (bk.edition>=2014  || bk.genre =="Science") && bk.publish >2009;
+})
+console.log(userbooks); 
+                        //  [
+                        //     {
+                        //       title: 'Book Eight',
+                        //       genre: 'Science',
+                        //       publish: 2011,
+                        //       edition: 2016
+                        //     }
+                        //   ]
