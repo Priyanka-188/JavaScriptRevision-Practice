@@ -12,12 +12,206 @@
         p{
             font-size: 1.5em;
         }
+        span{
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-black">
     <div >
-        <h1 id="title" class="heading">Hare Krishna!</h1>
-        <p> Jai Radha Madhav</p>
+        <h1 id="title" class="heading">Hare Krishna! <span> Priyanka Saini</span></h1>
+        <p> Jai Radha Madhav </p>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+
+        <input type="password" name ="password" id=""pswd>
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
     </div>
+    
+
+    <script>
+
+
+        //************ selecting element by id *************
+
+
+
+        // document.getElementById('title');
+        // <h1 id=​"title" class=​"heading">​Hare Krishna!​</h1>​
+        // document.getElementById('title').id;
+        // // 'title'
+        // document.getElementById('title').className;
+        // 'heading'
+        // document.getElementById('title').innerHTML;
+        // 'Hare Krishna!'
+
+        
+
+
+        // ******************** getAttribute    and setAttribute *****************************
+
+
+        //  document.getElementById('title').getAttribute('class');
+        // 'heading'
+
+        //document.getElementById('title').getAttribute('id');
+        //'title'
+
+        // document.getElementById('title').setAttribute('class','test');      //setAttribute will always overright the value of that attribute with new values.
+        //document.getElementById('title').setAttribute('class','heading test');
+
+
+
+
+        //***************88* storing the element in a variable and doing manipulation  ***************
+
+
+
+        //const title = document.getElementById('title');
+
+        // title.style.backgroundColor = "yellow";
+        // 'yellow'
+
+        //  title.style.padding = '15px';
+        // '15px'
+
+        //title.style.border = "3px solid red";
+        // '3px solid red'
+
+
+
+
+
+        //************ how to add content **************
+        //How to get content 
+
+        // title.innerText
+        // 'Hare Krishna!'
+
+        // title.textContent
+        // 'Hare Krishna!  Priyanka Saini'
+
+        // title.innerHTML
+        // 'Hare Krishna! <span> Priyanka Saini</span>'
+
+
+
+
+        // ************** difference among .innerText , .textContent , .innerHTML *****************
+        
+        //innerText will give only that content which is visible . It ignore disply:none elements
+
+        // textContent , It will give the whole content regardless of disply property
+
+        // innerHTML , It will give whole content along with the html tags inside content.
+
+        
+
+        
+
+        //********************* selecting element by className ************************
+        //It will return HTML collections
+
+
+        //document.getElementsByClassName('heading')
+        // HTMLCollection [h1#title.heading, title: h1#title.heading]0: h1#title.headingtitle: h1#title.headinglength: 1[[Prototype]]: HTMLCollection
+
+
+        // **************We will talk about HTML collections and NodeList later   ****************
+        //Nodelist is returned by querySelectorALL  and HTMLCollections is returned by ClassName
+
+
+
+
+
+        // /******************* QuerySelectors used in real world *********************8
+
+        // document.querySelector('h1');     // it will return first h1 on the page 
+        //document.querySelectors('h1');     // it will return all h1 on the page inside a NodeList 
+
+        //document.querySelector('#title')    //we can write selectors same as we write in CSS , id with hash , class with dot and name tags with name and so on
+        //document.querySelector(".heading");
+
+        //document.querySelector('input[type="password"]');
+        //document.querySelector('p:first-child');
+
+
+
+
+        ////////********* use case ***************
+
+        //myul =document.querySelector('ul');  --> select and store all li in myul
+        //myul.querySelector('li')      -----> return first li
+
+        //myul.querySelector('li').style.color = "red"          --> give red color to first li element
+
+        //firstli =myul.querySelector('li');
+        //firstli.innerHTML;
+        //firstli.style.fontSize = "100px";
+
+        //firstli.innerHTML = "Krishna";
+
+
+
+
+        ///****************** querySelectorAll ******************
+        // document.querySelectorAll('li');        ---->return all li element in a Nodelist   --->for iteration , we can use forEach loop in Nodelist 
+                                                // ----> we can check all protoptype in browser
+
+        //const tempLiList = document.querySelectorAll('li');            //storing Nodelist in tempLiList
+
+        //tempLiList[1].style.backgroundColor = "pink";       // turning background color of 2nd li to pink
+        //tempLiList[2].style.fontSize = "80px";
+
+
+        // we can use forEach loop to iterate throgh all elements of Nodelist
+        //tempLiList.forEach(function (li) {
+        //     console.log(li);
+        // })
+
+
+        // tempLiList.forEach(function (li) {
+        //     li.style.backgroundColor ="green";
+        // })
+
+
+        // we can convert a Nodelist in array as well
+
+
+
+
+
+        //********************** get element by className *****************8
+
+        //document.getElementsByClassName("list-item");           -->return HTMLCollection
+        // there is no way to iterate on HTMLCollection , so we can convert it in Array to iteratre over elements
+
+
+        //const tempClassList = document.getElementsByClassName("list-item");      //storing HTMLCollection in tempClassList
+
+        // const myConvertedArray =Array.from(tempClassList);          //converting and storing HTMLCollection into array
+        //now we can apply forEach loop and other methods of array 
+        
+
+        //myConvertedArray.forEach(function (li) {
+        //     li.style.color ="orange";
+        // })
+
+
+
+
+
+
+
+    </script>
+
+
+
 </body>
 </html>
