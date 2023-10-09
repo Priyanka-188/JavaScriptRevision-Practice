@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add, Edit and remove elements in DOM</title>
+</head>
+<body style ="background-color:#212121; color: white; ">
+    <ul class="language">
+        <li>"JavaScript"</li>
+    </ul>
+
+
+    <script>
+
+        ///*************ways to insert element in DOM ****************
+
+        //we have to add a new list item in ul, if we want to add more list item , we have to write the code again and again, so 
+        //we can write a method for that
+
+
+        // way 1
+        function addLanguage(langName){
+            const li = document.createElement('li');   //creating li element
+            li.innerHTML = `${langName}`;             // abhi element hawa m h 😂🤣 kahi add nhi hue h 
+
+            document.querySelector('.language').appendChild(li);  // adding element on the page
+        }
+
+        addLanguage('"Python"');
+        addLanguage('"C++"');
+
+        // Above used is the basic way to append  element in a document or parent 
+        // but it has a problem, ---> if the parent has 1000 elements already and we are appending new one ,so it has to traverse all the elements to come at last position
+        // so sometimes optimisation issue occurs
+
+
+        //way 2
+        // In this way no traversing happen , so is an optimize way
+        function addoptiLanguage(langName){
+            const li = document.createElement('li');   
+            li.append(document.createTextNode(`${langName}`));
+
+            document.querySelector('.language').appendChild(li);
+        }
+
+        addoptiLanguage('"TypeScript"');
+        addoptiLanguage('"Sanskrit"');
+
+
+
+        //********** EDIt element ************
+        //we can edit in different ways --using innerHTML, outerHTML , textContent , by creating new element and replacing it with the old one
+        
+
+       //example 1
+
+        const secondLang  = document.querySelector("li:nth-child(2)");
+        // console.log(secondLang.innerHTML);
+        // secondLang.innerHTML = "Mojo";      //====> not optimized way
+
+        //optimized way using textContent
+        const newli = document.createElement('li');
+        newli.textContent = "Mojo";
+        secondLang.replaceWith(newli);
+
+        //example 2  using outerHTML
+
+        const firstLang = document.querySelector('li:first-child');
+        firstLang.outerHTML = '<li>"Java"</li>';
+
+
+
+        //************* Remove element ***********
+
+        const lastLang = document.querySelector('li:last-child');
+        lastLang.remove();
+
+    </script>
+</body>
+</html>
