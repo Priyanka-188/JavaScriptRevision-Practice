@@ -17,7 +17,7 @@
 
 
     <script>
-        //************* TRAVERSING FROM CHILD NODE TO PARENT AND PARENT TO CHILD ***************
+        //************* TRAVERSING FROM CHILD NODE/element TO PARENT Node/element AND vice versa ***************
 
         //select parent element and see what values are coming
         const parent = document.querySelector('.parent');
@@ -79,7 +79,7 @@
         console.log(parent.lastChild);     //--> it is also text , you can see from Nodelist
 
 
-        //Note : 'firstElementChild' will return the first element while 'firstChild' will return the first node. 
+        //Note 💌 : 'firstElementChild' will return the first element while 'firstChild' will return the first node. 
         // similarly , 'lastElementChild' will return the last element while 'lastChild' will return the last node. 
 
         // if we do 'parent.children' we will get and HTMLCollection of all elements while if we do 'parent.childNodes' , we will get a nodelist with all the nodes.
