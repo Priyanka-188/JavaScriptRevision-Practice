@@ -65,16 +65,14 @@
     
 
   
-     document.getElementById('images').addEventListener('click', function(e){
-        console.log("clicked inside the ul");
-       
+    //  document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
 
-    }, true)
-
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log("owl clicked");
-        // e.stopPropagation();
-    }, true)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     // e.stopPropagation();
+    // }, false)
 
 
     //case 1
@@ -105,5 +103,32 @@
 
 //we will use both cases depending on the usecase
 
+//use of prevent default
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault();
+//     e.stopPropagation();  //if you want stop bubbling up
+
+//     console.log("Google clicked");
+// },false)
+
+
+// adding an event listener to remove an image when we click on it
+
+document.getElementById('images').addEventListener('click',function(e){
+
+    // console.log(e);
+    if(e.target.tagName === 'IMG')
+    {
+        // console.log(e.target.parentNode);
+        console.log(e.target.id);
+        let removeit = (e.target.parentNode);
+        removeit.remove();
+    }
+    
+},false)
+
+
+
 </script>
+
 </html>
