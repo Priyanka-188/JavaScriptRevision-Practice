@@ -79,7 +79,7 @@ var c = 30;
 //********************* Interesting *********************8 */
 
 
-console.log(addone(5));     //6 --->give no error  //calling function before declaration
+console.log(addone(5));     //6 --->give no error  //calling function before declaration is known as "Hoisting" in JS.
 
 //It is called normal function
 function addone (num){
