@@ -19,9 +19,12 @@
     </div>
 </body>
 <script>
-    //events in s works on browser activity
+
+    // events works on browser activity
+
     // There are many approaches to work with browserr activities
     // 1) we can insert onclick inside at html element , but this is not a feasible approch , so avoid it
+
     //2
     // document.getElementById('owl').onclick = function(){
     //     // alert("owl clicked");
@@ -31,16 +34,16 @@
     //event listners not only provide the onlclick but they aslo give the ability to propogate
 
     // There could be more approches 
-    //4) attachEvent method  ----> works in early times 
-    //5) jquery framework  --> .onEventListner --> early times
+    //3) attachEvent method  ----> works in early times 
+    //4) jquery framework  --> .onEventListner --> early times
 
-
-    //3 eventlisteners ---> best approach
+    
+    //5) eventlisteners ---> best approach
 
     // Event listners can listen so many events, keyword events , mouse events etc
 
 
-    /*Self study
+    /**** Self study ******
      --> type of events , timestamp, preventDefault,
      --> target, toElement, srcElement, currentTarget,
      --> clientX. clientY , offset, screenX, screenY , position
@@ -51,19 +54,26 @@
     //     // console.log(e);  //when we click on owl , we get so many events , first one is pointer event, pointer event is an object which has so many things button, bubbles, clientX, clientY and so on 
     //     //we get mosty browser events and environment events
     // },false);
-   
-    // In addEventListner we give three arguments, firstone is which event we want to fire, second is the function to invoke when event fired,and 
-    //third one is false/true 
+
+    
+    //When we work on event , we get an event-object(e) which we capture by the function
+    //addEventListner take three parameters, firstone is which event we want to fire, second is the function to capture the event (e),and 
+    //third one is event propogation value (false/true)
+
+
     //false/true  -->which works for event propogation
+    
     // eventPropgation has two context
     // 1) event bubbling   ---> denoted by false --->defult
     // 2) event capturing   ---> denoted by true
-    //When we work on event , we get and event-object(e)
 
-    //Example of event propogation - when I will click on owl in below both 
-    //case order of consolelog is different because of event propogation value true/false
+   
+   /*
+    Example of event propogation - when I will click on owl in both cases in below code 
+    order of consolelog is different because of event propogation value true/false
     
-
+    */
+    
   
     //  document.getElementById('images').addEventListener('click', function(e){
     //     console.log("clicked inside the ul");
@@ -75,35 +85,45 @@
     // }, false)
 
 
-    //case 1
+    //************* Case 1  *************88
 
     //when I set the event propogation to false the output will be
     /*
         owl clicked
         clicked inside the ul    
     */
+
    //so first the inside event worked and then outside, means it goes from inside to outdie 
-   // hence known as bubbling
-   // We can stop the propogation only at inside event bu using stopPropogation()
+   // hence known as bubbling context.
+   // We can stop the propogation only at inside event by using stopPropogation()
+
   //so after that when I will click on owl the output will be
   /*
         owl clicked
   */
 
-  //Case 2
+
+
+  //********* Case 2 ********
+
+
+
   // //when I set the event propogation to true the output will be
     /*
     clicked inside the ul    
     owl clicked
     */
+
    //so first the outside event worked and then inside, means it goes from outside to inside 
-   // hence known as captuing
-   // We can stop the propogation only at inside event bu using stopPropogation()
+   // hence known as captuing context
+   // We can stop the propogation only at outside event by using stopPropogation()
 
 
-//we will use both cases depending on the usecase
+//we will use both above cases depending on the usecase
 
-//use of prevent default
+
+//************** use of preventDefault **************************8
+ 
 // document.getElementById('google').addEventListener('click',function(e){
 //     e.preventDefault();
 //     e.stopPropagation();  //if you want stop bubbling up
@@ -112,7 +132,7 @@
 // },false)
 
 
-// adding an event listener to remove an image when we click on it
+// ******* adding an event listener to remove an image when we click on it **********8
 
 document.getElementById('images').addEventListener('click',function(e){
 
