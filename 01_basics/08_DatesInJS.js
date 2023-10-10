@@ -1,45 +1,49 @@
 //DATE
 
 const myDate = new Date();
-console.log(myDate);
+// console.log(myDate);            //2023-10-10T09:52:55.773Z
 
-console.log(myDate.getDate());
+// console.log(myDate.getDate());       //10
 
-console.log(myDate.toLocaleString());
-console.log(myDate.toDateString());
+// console.log(myDate.toLocaleString());        //10/10/2023, 9:53:52 AM
+// console.log(myDate.toDateString());            //Tue Oct 10 2023
 
-console.log(myDate.toString());
-console.log(myDate.toISOString());
-console.log(myDate.toJSON());
-console.log(myDate.toLocaleDateString());
-console.log(myDate.toLocaleString());
-console.log(myDate.toLocaleTimeString());
-console.log(myDate.toTimeString());
+// console.log(myDate.toString());                 //Tue Oct 10 2023 09:54:57 GMT+0000 (Coordinated Universal Time)
+// console.log(myDate.toISOString());              //2023-10-10T09:54:57.641Z
+// console.log(myDate.toJSON());                       //2023-10-10T09:55:53.750Z
+// console.log(myDate.toLocaleDateString());           //10/10/2023
+// console.log(myDate.toLocaleString());               // 10/10/2023, 9:55:53 AM
+// console.log(myDate.toLocaleTimeString());               // 9:57:14 AM
+// console.log(myDate.toTimeString());                 //09:57:14 GMT+0000 (Coordinated Universal Time)
 
-//CREATING CUSTOM DATES
+
+//******* CREATING CUSTOM DATES ************
+
 
 let createdDate = new Date("11-30-2001");
-console.log(createdDate.toLocaleString());
-console.log((createdDate.toDateString()));
+// console.log(createdDate.toLocaleString());          //11/30/2001, 12:00:00 AM
+// console.log((createdDate.toDateString()));          // Fri Nov 30 2001
 
 
-//MY TIMESTAMP
+//************ MY TIMESTAMP ***********
+
 let myTimeStamp = Date.now();
-console.log(myTimeStamp);
+// console.log(myTimeStamp);               //1696931975169
 
-// to convert timestamp into seconds
-console.log(Math.floor(Date.now()/1000));
-console.log(Math.floor(Date.now()/1000));
+// // to convert timestamp into seconds
+// console.log(Math.floor(Date.now()/1000));   //1696932100
+// console.log(Math.floor(Date.now()/1000));
 
 let newDate = new Date();
-console.log(newDate.getMonth()+1);
-console.log(newDate.getDay());
+console.log(newDate);
+console.log(newDate.getMonth()+1);              //10
+console.log(newDate.getDay());                  //2  -->as today is tuesday
 
 
-console.log(`${newDate.getDate()} is today's date`);
+// console.log(`${newDate.getDate()} is today's date`);
 
 
-// .toLocaleString() function can be used to define custom values of dates.
-newDate.toLocaleString('default',{
-    weekday:'long',
-})
+// // .toLocaleString() function can be used to define custom values of dates.
+// newDate.toLocaleString('default',{
+//     weekday:'long',
+// })
