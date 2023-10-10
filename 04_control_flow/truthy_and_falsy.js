@@ -7,6 +7,13 @@ else{
     console.log(("Don't have user email"));
 }   //Got user email
 
+/**
+ * Truthy values In JavaScript, a truthy value is a value that is considered true when encountered in a Boolean context.
+ *  Falsy values In JavaScript, a falsy value is a value that is considered false when encountered in a Boolean context.
+ * 
+ * A falsy value is something which evaluates to FALSE, for instance when checking a variable.
+ */
+
 //falsy values --->
 
 //false , 0 , -0 , BigInt 0n , "" , null , undefined , NaN
