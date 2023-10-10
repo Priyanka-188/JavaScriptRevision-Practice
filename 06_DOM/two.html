@@ -21,18 +21,17 @@
 
         //select parent element and see what values are coming
         const parent = document.querySelector('.parent');
-        // console.log(parent);      //we will get all values 
+        // console.log(parent);      //we will get all child div elements  
 
 
-        // console.log(parent.children);  //we will get HTMLCollection
-        //HTMLCollection(4) [div.day, div.day, div.day, div.day]
+        // console.log(parent.children);          //we will get HTMLCollection -->  //HTMLCollection(4) [div.day, div.day, div.day, div.day]
 
         // console.log(parent.children[1]);              //<div class="day">Tuesday</div>
         // console.log(parent.children[1].innerHTML);           //Tuesday
 
 
 
-        //***********we can apply classic for loop on collection ***************88
+        //*********** we can apply classic for loop on collection ***************88
 
         // for(let i=0 ; i<parent.children.length ; i++){
         //    console.log( parent.children[i].innerHTML);
@@ -49,7 +48,7 @@
 
 
 
-        //we have parent , but apart from children parent has some other properties like .firstElementChild and many more below
+        //we have parent , but apart from children.. parent has some other properties like .firstElementChild,lastElementChild and many more below
 
         // console.log(parent.firstElementChild);
         // console.log(parent.lastElementChild);
@@ -59,13 +58,15 @@
 
         //*************** we are moving from parent to child in above program , but we can go from child to parent also *************
        
+
         const dayOne = document.querySelector('.day');     //queryselector is very expensive operation as it uses threads
-        // console.log(dayOne);        //print first day
+        // console.log(dayOne);                    //print first day
 
         // going to parent element of dayOne which will be parent
         
-        // console.log(dayOne.parentElement)  // it will give all the days with all style properties
+        // console.log(dayOne.parentElement)          // it will give all the days with all style properties
         // console.log(dayOne.nextElementSibling);    //print next sibling
+
 
 
         // *************** How many nodes of parents there *********************
@@ -74,9 +75,12 @@
         /*
         NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]  --> // 0: text  1: div.day  2: text   3: div.day   4: text   5: div.day   6: text    7: div.day    8: text       length:9   [[Prototype]]: NodeList*/
 
-        // console.log(parent.firstChild);    //-->it will print first node that is text
-        // console.log(parent.lastChild);     //--> is is also text , you can see from Nodelist
+        console.log(parent.firstChild);    //-->it will print first node that is text
+        console.log(parent.lastChild);     //--> it is also text , you can see from Nodelist
 
+
+        //Note : 'firstElementChild' will return the first element while 'firstChild' will return the first node. 
+        // similarly , 'lastElementChild' will return the last element while 'lastChild' will return the last node. 
 
 
 
