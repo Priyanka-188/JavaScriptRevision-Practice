@@ -1,5 +1,5 @@
-// setInterval() and setTimeOut() are not core javascript function , we get them from browser 
-// and are available in some other APIs too.
+<!-- // setInterval() and setTimeOut() are not core javascript function , we get them from browser 
+// and are available in some other APIs too. -->
 
 <!DOCTYPE html>
 <html lang = "en">
@@ -8,10 +8,53 @@
         <title>Asyn functions</title>
     </head>
     <body>
-    <h1>Hrikesh</h1>
-    <button>stop</button>
-
+        <h1>Hrishkesh🧡</h1>
+        <button id ="stop">stop</button>
     </body>
+
+
+    <script>
+
+// Syntax 
+    /*
+    SetTimeout(function/function reference,milliseconds)    --- here the function is also known as handler and callback 
+    setTimeout(function(){},1000);    
+
+    ClearTimeout(variable which hold the reference of settimeout)
+
+    SetInterval(function /functiom reference, milisecond) - repeat until we clear it. 
+    ClearInterval(reference of function)
+    */
+        
+    // setTimeout(function(){
+    //     document.querySelector('h1').innerHTML = "Obsessed with Hrikesh💖";
+    // },3000);
+
+    // const clearMe = setTimeout( ()=>{
+    //     document.querySelector('h1').innerText = 'Grateful!';
+    // },2000);
+
+    function sayMyName(){
+        document.querySelector('h1').innerHTML = "Priyanka";
+        console.log("printed!");
+    }
+
+   const cleartimeout = setTimeout(sayMyName, 2000);
+
+    // when  we click on the button , setTimeout will be cleared.
+
+    
+    // const id = document.getElementById('#stop');   --->>> don't access this outside eventListner , it is  is returning null because it executes before the DOM fully loads.
+
+    document.querySelector('#stop').addEventListener('click',function(e){
+        clearTimeout(cleartimeout);
+        console.log("stopped!");
+    },false)
+
+    
+
+    
+    </script>
 
     
 
