@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeInterval</title>
+</head>
+<body>
+    <h1>I am very happy. </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+
+<script>
+    // setInterval(function /functiom reference, milisecond) - repeat until we clear it. 
+    // clearInterval(reference of function)
+    // setInterval((){},1000);
+
+
+
+    // const clearInt = setInterval(()=>{
+    //  document.querySelector('h1').innerHTML += "I am very happy with Krihn-Priya💕";
+    // },1000)
+
+    // clearInterval(clearInt);
+
+
+    // we can pass parameters also in setInterval()
+
+    let clrInterval;
+
+    document.getElementById('start').addEventListener('click',function(e){
+
+        clrInterval = setInterval(sayName,1000,'🧡 Krishna 🧡');
+    },false)
+
+    const sayName = function(name){
+        document.querySelector('h1').innerHTML += name;
+    }
+
+    document.getElementById('stop').addEventListener('click',function(){
+        clearInterval(clrInterval);
+    },false);
+    
+
+
+</script>
+</html>
