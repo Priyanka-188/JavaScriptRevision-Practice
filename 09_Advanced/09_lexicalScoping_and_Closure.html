@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scoping and Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green"> Green</button>
+    <button id="blue">Blue</button>
+    <button id="yellow">yellow</button>
+    <script>
+
+        //lexical scoping
+        // function init(){
+        //     let name = "Krishna!";
+        //     function displayName(){
+        //         console.log(name);
+        //     }
+        //     displayName();
+        // }
+        // init();
+
+        // init() creates a  local variable name and a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of init() function.
+        // Note:- the console.log() statement within the displayName() function successfully displays the value of the name variable, which is declared in its parent function. This is an example of lexical scoping, which describes how a parser resolves variable names when functions are nested.
+
+
+
+
+        //closure
+
+        // function makeFunc(){
+        //     const name = "Krishna";
+        //     function displayName(){
+        //         console.log(name);
+        //     }
+        //     return displayName ;        //It will return lexical scoping means the varaibles of outer functions too.
+
+        // }
+
+        // const myFunc = makeFunc();
+        // myFunc();
+    </script>
+
+    <script>
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`;
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange");
+
+        document.getElementById('green').onclick = clickHandler('green');
+
+        document.getElementById('blue').onclick = clickHandler('blue');
+
+        document.getElementById('yellow').onclick = clickHandler('yellow');
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
