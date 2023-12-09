@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--  How to submit a form using JavaScript by clicking a link? -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Radha</h1>
+    <form name="myform" action="index.php">
+        Search: <input type="text" name="query">
+        <a href="submitform()">Submit</a>
+    </form>
+
+    <script>
+        function submitform(){
+            document.myform.submit();
+        }
+        const h = document.getElementsByTagName("h1");
+
+        document.body.bgColor = "yellow";
+        h.style.bgColor = "yellow";
+        
+    </script>
+
+  </body>
+</html>
